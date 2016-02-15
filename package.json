@@ -1,0 +1,47 @@
+{
+  "name": "ava",
+  "version": "0.0.0",
+  "description": "Snippets for AVA",
+  "license": "MIT",
+  "repository": "sindresorhus/atom-ava",
+  "private": true,
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "maintainers": [
+    {
+      "name": "Vadim Demedes",
+      "email": "vdemedes@gmail.com",
+      "url": "github.com/vdemedes"
+    },
+    {
+      "name": "James Talmage",
+      "email": "james@talmage.io",
+      "url": "github.com/jamestalmage"
+    }
+  ],
+  "engines": {
+    "atom": ">=1.4.0"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "keywords": [
+    "snippets",
+    "test",
+    "runner",
+    "ava",
+    "mocha"
+  ],
+  "devDependencies": {
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true,
+    "globals": [
+      "atom"
+    ]
+  }
+}

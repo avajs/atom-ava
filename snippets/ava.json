@@ -1,0 +1,44 @@
+{
+	".source.js, .source.jsx, .source.ts": {
+		"AVA": {
+			"prefix": "ava",
+			"body": "import test from 'ava';\nimport $1 from '$2';\n\ntest('${3:title}', t => {\n\tt.is($1(), '$4');\n});"
+		},
+		"Import AVA": {
+			"prefix": "import-ava",
+			"body": "import test from 'ava';\n"
+		},
+		"Test": {
+			"prefix": "test",
+			"body": "test('${1:title}', t => {\n\t$2\n});"
+		},
+		"Test - Async": {
+			"prefix": "test-async",
+			"body": "test('${1:title}', async t => {\n\t$2\n});"
+		},
+		"Test - Serial": {
+			"prefix": "test-serial",
+			"body": "test.serial('${1:title}', t => {\n\t$2\n});"
+		},
+		"Test - Cb": {
+			"prefix": "test-cb",
+			"body": "test.cb('${1:title}', t => {\n\t$2\n\tt.end()\n});"
+		},
+		"Before hook": {
+			"prefix": "before-hook",
+			"body": "test.before(t => {\n\t$1\n});"
+		},
+		"After hook": {
+			"prefix": "after-hook",
+			"body": "test.after(t => {\n\t$1\n});"
+		},
+		"Before each hook": {
+			"prefix": "before-each-hook",
+			"body": "test.beforeEach(t => {\n\t$1\n});"
+		},
+		"After each hook": {
+			"prefix": "after-each-hook",
+			"body": "test.afterEach(t => {\n\t$1\n});"
+		}
+	}
+}
