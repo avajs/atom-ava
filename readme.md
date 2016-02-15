@@ -24,6 +24,7 @@ Start writing a snippet's `prefix` and then press <kbd>Tab ↹</kbd> to expand t
 ## Related
 
 - [Sublime plugin](https://github.com/sindresorhus/sublime-ava)
+- [VS Code plugin](https://github.com/samverschueren/vscode-ava)
 
 
 ## License
