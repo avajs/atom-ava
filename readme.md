@@ -2,7 +2,7 @@
 
 > Snippets for [AVA](https://ava.li)
 
-<img src="screenshot.gif" width=598">
+<img src="https://github.com/sindresorhus/atom-ava/raw/master/screenshot.gif" width=598">
 
 
 ## Install
