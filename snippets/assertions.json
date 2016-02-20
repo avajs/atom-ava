@@ -1,0 +1,60 @@
+{
+	".source.js, .source.jsx, .source.ts": {
+		"t.pass()": {
+			"prefix": "t.pass",
+			"body": "t.pass(${1:'${2:message}'});"
+		},
+		"t.fail()": {
+			"prefix": "t.fail",
+			"body": "t.fail(${1:'${2:message}'});"
+		},
+		"t.ok()": {
+			"prefix": "t.ok",
+			"body": "t.ok(${1:value}${2:, '${3:message}'});"
+		},
+		"t.notOk()": {
+			"prefix": "t.notOk",
+			"body": "t.notOk(${1:value}${2:, '${3:message}'});"
+		},
+		"t.true()": {
+			"prefix": "t.true",
+			"body": "t.true(${1:value}${2:, '${3:message}'});"
+		},
+		"t.false()": {
+			"prefix": "t.false",
+			"body": "t.false(${1:value}${2:, '${3:message}'});"
+		},
+		"t.is()": {
+			"prefix": "t.is",
+			"body": "t.is(${1:value}, ${2:expected}${3:, '${4:message}'});"
+		},
+		"t.not()": {
+			"prefix": "t.not",
+			"body": "t.not(${1:value}, ${2:expected}${3:, '${4:message}'});"
+		},
+		"t.same()": {
+			"prefix": "t.same",
+			"body": "t.same(${1:value}, ${2:expected}${3:, '${4:message}'});"
+		},
+		"t.notSame()": {
+			"prefix": "t.notSame",
+			"body": "t.notSame(${1:value}, ${2:expected}${3:, '${4:message}'});"
+		},
+		"t.throws()": {
+			"prefix": "t.throws",
+			"body": "t.throws(${1:function|promise}${2:, ${3:expected}${4:, '${5:message}'}});"
+		},
+		"t.notThrows()": {
+			"prefix": "t.notThrows",
+			"body": "t.notThrows(${1:function|promise}${2:, '${3:message}'});"
+		},
+		"t.regex()": {
+			"prefix": "t.regex",
+			"body": "t.regex(${1:contents}, ${2:regex}${3:, '${4:message}'});"
+		},
+		"t.ifError()": {
+			"prefix": "t.ifError",
+			"body": "t.ifError(${1:error}${2:, '${3:message}'});"
+		}
+	}
+}
