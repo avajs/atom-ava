@@ -2,6 +2,7 @@
   "name": "ava",
   "version": "0.2.0",
   "description": "Snippets for AVA",
+  "main": "./lib/main",
   "license": "MIT",
   "repository": "sindresorhus/atom-ava",
   "private": true,
@@ -27,6 +28,9 @@
   },
   "scripts": {
     "test": "xo"
+  },
+  "activationCommands": {
+    "atom-workspace": "ava:toggle"
   },
   "keywords": [
     "snippets",
