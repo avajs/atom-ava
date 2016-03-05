@@ -11,7 +11,10 @@ module.exports = TestingForAva =
     @atomPanel = atom.workspace.addRightPanel(item: @panel, visible: false)
 
     @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.commands.add 'atom-workspace', 'ava:toggle': => @toggle()
+
+    @subscriptions.add atom.commands.add 'atom-workspace',
+      'ava:toggle': => @toggle()
+      'ava:run': => @panel.run()
 
   deactivate: ->
     @subscriptions.dispose()

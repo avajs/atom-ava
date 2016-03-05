@@ -1,3 +1,5 @@
+TestRunnerProcess = require './test-runner-process'
+
 module.exports =
   class Panel
     constructor: (serializedState) ->
@@ -10,6 +12,8 @@ module.exports =
       message.textContent = "The TestingForAva package is Alive! It's ALIVE!"
       message.classList.add('message')
       @element.appendChild(message)
+
+    run: ->
 
     # Returns an object that can be retrieved when package is activated
     serialize: ->

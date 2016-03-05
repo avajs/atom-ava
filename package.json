@@ -39,6 +39,10 @@
     "ava",
     "mocha"
   ],
+  "dependencies": {
+    "event-kit": "^1.1.0",
+    "tap-parser": ">=v1.2.2"
+  },
   "devDependencies": {
     "xo": "*"
   },
