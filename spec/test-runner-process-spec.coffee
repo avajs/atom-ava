@@ -7,9 +7,12 @@ describe 'TestRunnerProcess', ->
   beforeEach ->
     executor = new TerminalCommandExecutor
     parser = ((completeCallBack) ->
+      on: (eventName, callBack) ->
       write: ->
       end: () ->)()
-    runner = new TestRunnerProcess(executor, parser)
+
+    runner = new TestRunnerProcess(executor)
+    spyOn(runner, 'getParser').andReturn(parser)
 
   it 'can be created', ->
     expect(runner).not.toBeNull()
@@ -17,17 +20,17 @@ describe 'TestRunnerProcess', ->
   it 'runs the executor with the appropriate parameters', ->
     spyOn(atom.project, 'getPaths').andReturn(['path'])
     spyOn(executor, 'run')
-    runner.run('filename')
-    expect(executor.run).toHaveBeenCalledWith('ava filename --tap', 'path')
+    runner.run('/somefolder/filename')
+    expect(executor.run).toHaveBeenCalledWith('ava filename --tap', '/somefolder/')
 
   it 'redirects the output for the parser when is received', ->
     spyOn(parser, 'write')
-    runner.run()
+    runner.run('/somefolder/filename')
     executor.stdOutDataReceived 'newdata'
     expect(parser.write).toHaveBeenCalledWith('newdata')
 
   it 'closes the parser stream when the output is over', ->
     spyOn(parser, 'end')
-    runner.run()
+    runner.run('/somefolder/filename')
     executor.streamClosed 0
     expect(parser.end).toHaveBeenCalled()
