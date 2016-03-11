@@ -41,7 +41,8 @@
   ],
   "dependencies": {
     "event-kit": "^1.1.0",
-    "tap-parser": ">=v1.2.2"
+    "tap-parser": "^1.2.2",
+    "ava": "^0.13.0"
   },
   "devDependencies": {
     "xo": "*"
