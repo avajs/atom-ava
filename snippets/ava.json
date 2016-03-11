@@ -24,6 +24,18 @@
 			"prefix": "test-cb",
 			"body": "test.cb('${1:title}', t => {\n\t$2\n\tt.end()\n});"
 		},
+		"Test - Only": {
+			"prefix": "test-only",
+			"body": "test.only('${1:title}', t => {\n\t$2\n});"
+		},
+		"Test - Skip": {
+			"prefix": "test-skip",
+			"body": "test.skip('${1:title}', t => {\n\t$2\n});"
+		},
+		"Test - Todo": {
+			"prefix": "test-todo",
+			"body": "test.todo('${1:title}');"
+		},
 		"Before hook": {
 			"prefix": "before-hook",
 			"body": "test.before(t => {\n\t$1\n});"
