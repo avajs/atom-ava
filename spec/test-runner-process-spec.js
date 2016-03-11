@@ -18,7 +18,7 @@ describe('TestRunnerProcess', () => {
     };
 
     runner = new TestRunnerProcess(executor);
-    spyOn(runner, 'getParser').andReturn(parser);
+    spyOn(runner, '_getParser').andReturn(parser);
   });
 
   it('can be created', () => expect(runner).not.toBeNull());
