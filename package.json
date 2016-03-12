@@ -40,7 +40,6 @@
     "mocha"
   ],
   "dependencies": {
-    "event-kit": "^1.1.0",
     "tap-parser": "^1.2.2",
     "ava": "^0.13.0"
   },
