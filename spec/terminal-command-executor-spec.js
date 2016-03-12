@@ -32,18 +32,16 @@ describe('TerminalCommandExecutor', () => {
     expect(fake.commandsReceived[1]).toBe('exit\n');
   });
 
-
   it('calls the callback when new data appears in stdout', () => {
     executor.run('command');
-    executor.onDataReceived((data) => stdOutData = data);
+    executor.on('dataReceived', (data) => stdOutData = data);
     fake.stdout.write('some data');
     expect(stdOutData).toBe('some data');
   });
 
-
   it('calls the callback when the stream is closed', () => {
     executor.run('command');
-    executor.onDataFinished((code) => exitCode = code);
+    executor.on('dataFinished', (code) => exitCode = code);
     fake.emulateClose();
     expect(exitCode).toBe(0);
   });

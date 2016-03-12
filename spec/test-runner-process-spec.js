@@ -8,8 +8,22 @@ describe('TestRunnerProcess', () => {
   let executor = {};
   let parser = {};
 
+  class TerminalCommandExecutorDouble extends TerminalCommandExecutor {
+    constructor() {
+      super();
+    }
+
+    emulateDataWrittenStdOut(data) {
+      this.emit(this.dataReceivedEventName, data);
+    }
+
+    emulateDataFinished(statusCode) {
+      this.emit(this.dataFinishedEventName, statusCode);
+    }
+  }
+
   beforeEach(() => {
-    executor = new TerminalCommandExecutor();
+    executor = new TerminalCommandExecutorDouble();
 
     parser = {
       on(eventName, callBack) {},
@@ -33,14 +47,14 @@ describe('TestRunnerProcess', () => {
   it('redirects the output for the parser when is received', () => {
     spyOn(parser, 'write');
     runner.run('/somefolder/filename');
-    executor.stdOutDataReceived('newdata');
+    executor.emulateDataWrittenStdOut('newdata');
     expect(parser.write).toHaveBeenCalledWith('newdata');
   });
 
   it('closes the parser stream when the output is over', () => {
     spyOn(parser, 'end');
     runner.run('/somefolder/filename');
-    executor.streamClosed(0);
+    executor.emulateDataFinished(0);
     expect(parser.end).toHaveBeenCalled();
   });
 });
