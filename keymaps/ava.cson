@@ -1,3 +1,2 @@
 'atom-workspace':
   'ctrl-alt-a': 'ava:toggle'
-  'ctrl-alt-x': 'ava:run'
