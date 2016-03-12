@@ -27,8 +27,8 @@ class FakeSpawn {
   }
 
   emulateClose() {
-    this.mainCallBack(0);
+    this.mainCallBack(1);
   }
 }
 
-module.exports = FakeSpawn
+module.exports = FakeSpawn;
