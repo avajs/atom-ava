@@ -1,33 +1,37 @@
 'use babel';
 
 describe('TestingForAva', () => {
-  let packageName = 'ava';
-  let mainSelector = '.ava';
-  let toggleCommand = 'ava:toggle';
-  let workspaceElement = [];
-  let activationPromise = [];
+	const packageName = 'ava';
+	const mainSelector = '.ava';
+	const toggleCommand = 'ava:toggle';
+	let workspaceElement = [];
+	let activationPromise = [];
 
-  beforeEach(() => {
-    workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage(packageName);
-  });
+	beforeEach(() => {
+		workspaceElement = atom.views.getView(atom.workspace);
+		activationPromise = atom.packages.activatePackage(packageName);
 
-  describe('when the ava:toggle event is triggered', () => {
-    it('hides and shows the view', () => {
-      jasmine.attachToDOM(workspaceElement);
+		const editor = {buffer: {file: {path: '/this/is/a/path/file.js'}}};
 
-      expect(workspaceElement.querySelector(mainSelector)).not.toExist();
+		spyOn(atom.workspace, 'getActiveTextEditor').andReturn(editor);
+	});
 
-      atom.commands.dispatch(workspaceElement, toggleCommand);
+	describe('when the ava:toggle event is triggered', () => {
+		it('hides and shows the view', () => {
+			jasmine.attachToDOM(workspaceElement);
 
-      waitsForPromise(() => activationPromise);
+			expect(workspaceElement.querySelector(mainSelector)).not.toExist();
 
-      runs(() => {
-        let mainElement = workspaceElement.querySelector(mainSelector);
-        expect(mainElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, toggleCommand);
-        expect(mainElement).not.toBeVisible();
-      });
-    });
-  });
+			atom.commands.dispatch(workspaceElement, toggleCommand);
+
+			waitsForPromise(() => activationPromise);
+
+			runs(() => {
+				const mainElement = workspaceElement.querySelector(mainSelector);
+				expect(mainElement).toBeVisible();
+				atom.commands.dispatch(workspaceElement, toggleCommand);
+				expect(mainElement).not.toBeVisible();
+			});
+		});
+	});
 });
