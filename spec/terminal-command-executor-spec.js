@@ -16,6 +16,7 @@ describe('TerminalCommandExecutor', () => {
     fake = new FakeSpawn();
     executor = new TerminalCommandExecutor();
     spyOn(ChildProcess, 'spawn').andReturn(fake);
+    spyOn(fake, 'kill');
   });
 
   it('can be created', () => expect(executor).not.toBeNull());
@@ -44,5 +45,11 @@ describe('TerminalCommandExecutor', () => {
     executor.on('dataFinished', (code) => exitCode = code);
     fake.emulateClose();
     expect(exitCode).toBe(0);
+  });
+
+  it('cancels the current execution', () => {
+    executor.run('command');
+    executor.cancelExecution();
+    expect(fake.kill).toHaveBeenCalled();
   });
 });
