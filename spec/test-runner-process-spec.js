@@ -1,7 +1,7 @@
 /** @babel */
 
-const TestRunnerProcess = require('../lib/test-runner-process');
-const TerminalCommandExecutor = require('../lib/terminal-command-executor');
+import TestRunnerProcess from '../lib/test-runner-process';
+import TerminalCommandExecutor from '../lib/terminal-command-executor';
 
 describe('TestRunnerProcess', () => {
 	let runner = {};

@@ -1,8 +1,8 @@
 /** @babel */
 
-const TerminalCommandExecutor = require('../lib/terminal-command-executor');
-const ChildProcess = require('child_process');
-const FakeSpawn = require('./fake-spawn');
+import TerminalCommandExecutor from '../lib/terminal-command-executor';
+import ChildProcess from 'child_process';
+import FakeSpawn from './fake-spawn';
 
 describe('TerminalCommandExecutor', () => {
 	let executor = {};
