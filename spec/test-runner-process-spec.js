@@ -1,4 +1,4 @@
-'use babel';
+/** @babel */
 
 const TestRunnerProcess = require('../lib/test-runner-process');
 const TerminalCommandExecutor = require('../lib/terminal-command-executor');

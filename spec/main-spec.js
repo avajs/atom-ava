@@ -1,4 +1,4 @@
-'use babel';
+/** @babel */
 
 describe('TestingForAva', () => {
 	const packageName = 'ava';

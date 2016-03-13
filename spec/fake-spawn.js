@@ -1,4 +1,4 @@
-'use babel';
+/** @babel */
 
 class FakeSpawn {
 	constructor() {

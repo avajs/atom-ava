@@ -1,4 +1,4 @@
-'use babel';
+/** @babel */
 
 const TerminalCommandExecutor = require('../lib/terminal-command-executor');
 const ChildProcess = require('child_process');
