@@ -47,7 +47,12 @@
     "xo": "*"
   },
   "xo": {
-    "envs": ["browser", "node", "jasmine", "atomtest"],
+    "envs": [
+      "browser",
+      "node",
+      "jasmine",
+      "atomtest"
+    ],
     "esnext": true,
     "globals": [
       "atom"
