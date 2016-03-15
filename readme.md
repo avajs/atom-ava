@@ -27,6 +27,7 @@ Snippets are fuzzy matched, so you can for example just write `tnok` to get the 
 
 - [Sublime plugin](https://github.com/sindresorhus/sublime-ava)
 - [VS Code plugin](https://github.com/samverschueren/vscode-ava)
+- [Standard style version of this plugin](https://github.com/capaj/atom-ava-standard)
 
 
 ## License
