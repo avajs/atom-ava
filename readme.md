@@ -25,6 +25,7 @@ Snippets are fuzzy matched, so you can for example just write `tnok` to get the 
 
 ## Related
 
+- [Standard version of these for Atom](https://github.com/capaj/atom-ava-standard)
 - [Sublime plugin](https://github.com/sindresorhus/sublime-ava)
 - [VS Code plugin](https://github.com/samverschueren/vscode-ava)
 
