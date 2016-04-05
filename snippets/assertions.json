@@ -8,13 +8,13 @@
 			"prefix": "t.fail",
 			"body": "t.fail(${1:'${2:message}'});"
 		},
-		"t.ok()": {
-			"prefix": "t.ok",
-			"body": "t.ok(${1:value}${2:, '${3:message}'});"
+		"t.truthy()": {
+			"prefix": "t.truthy",
+			"body": "t.truthy(${1:value}${2:, '${3:message}'});"
 		},
-		"t.notOk()": {
-			"prefix": "t.notOk",
-			"body": "t.notOk(${1:value}${2:, '${3:message}'});"
+		"t.falsy()": {
+			"prefix": "t.falsy",
+			"body": "t.falsy(${1:value}${2:, '${3:message}'});"
 		},
 		"t.true()": {
 			"prefix": "t.true",
@@ -32,13 +32,13 @@
 			"prefix": "t.not",
 			"body": "t.not(${1:value}, ${2:expected}${3:, '${4:message}'});"
 		},
-		"t.same()": {
-			"prefix": "t.same",
-			"body": "t.same(${1:value}, ${2:expected}${3:, '${4:message}'});"
+		"t.deepEqual()": {
+			"prefix": "t.deepEqual",
+			"body": "t.deepEqual(${1:value}, ${2:expected}${3:, '${4:message}'});"
 		},
-		"t.notSame()": {
-			"prefix": "t.notSame",
-			"body": "t.notSame(${1:value}, ${2:expected}${3:, '${4:message}'});"
+		"t.notDeepEqual()": {
+			"prefix": "t.notDeepEqual",
+			"body": "t.notDeepEqual(${1:value}, ${2:expected}${3:, '${4:message}'});"
 		},
 		"t.throws()": {
 			"prefix": "t.throws",

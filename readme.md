@@ -20,7 +20,7 @@ Included are some [snippets](snippets/ava.json) useful for writing AVA tests.
 
 Start writing a snippet's `prefix` and then press <kbd>Tab ↹</kbd> to expand the snippet.
 
-Snippets are fuzzy matched, so you can for example just write `tnok` to get the `t.notOk()` snippet.
+Snippets are fuzzy matched, so you can for example just write `tde` to get the `t.deepEqual()` snippet.
 
 
 ## Related
