@@ -53,4 +53,20 @@ describe('TestRunnerProcess', () => {
 		executor.emulateDataFinished(0);
 		expect(parser.end).toHaveBeenCalled();
 	});
+
+	it('prevents multiple executions', () => {
+		spyOn(executor, 'run');
+		runner.run('/somefolder/filename');
+		runner.run('/somefolder/filename');
+		expect(executor.run.callCount).toBe(1);
+	});
+
+	it('informs about the state of the execution', () => {
+		spyOn(executor, 'run');
+		expect(runner.canRun()).toBe(true);
+		runner.run('/somefolder/filename');
+		expect(runner.canRun()).toBe(false);
+		executor.emulateDataFinished(0);
+		expect(runner.canRun()).toBe(true);
+	});
 });

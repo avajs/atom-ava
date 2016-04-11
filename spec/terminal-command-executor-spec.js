@@ -1,8 +1,8 @@
 /** @babel */
 
 import ChildProcess from 'child_process';
-import FakeSpawn from './fake-spawn';
 import TerminalCommandExecutor from '../lib/terminal-command-executor';
+import FakeSpawn from './fake-spawn';
 
 describe('TerminalCommandExecutor', () => {
 	let executor = {};
