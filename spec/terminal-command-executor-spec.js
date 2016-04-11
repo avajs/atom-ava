@@ -50,16 +50,4 @@ describe('TerminalCommandExecutor', () => {
 		fake.emulateClose();
 		expect(exitCode).toBe(1);
 	});
-
-	it('cancels the current execution', () => {
-		executor.run('command');
-		executor.cancelExecution();
-		expect(fake.kill).toHaveBeenCalled();
-	});
-
-	it('cancels the current execution if launched several times', () => {
-		executor.run('command');
-		executor.run('command');
-		expect(fake.kill).toHaveBeenCalled();
-	});
 });

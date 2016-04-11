@@ -53,10 +53,4 @@ describe('TestRunnerProcess', () => {
 		executor.emulateDataFinished(0);
 		expect(parser.end).toHaveBeenCalled();
 	});
-
-	it('cancels the current test execution', () => {
-		spyOn(executor, 'cancelExecution');
-		runner.cancelExecution();
-		expect(executor.cancelExecution).toHaveBeenCalled();
-	});
 });
