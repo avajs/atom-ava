@@ -1,7 +1,22 @@
 /** @babel */
 
+import EventEmitter from 'events';
 import TestRunnerProcess from '../lib/test-runner-process';
 import TerminalCommandExecutor from '../lib/terminal-command-executor';
+
+class FakeParser extends EventEmitter {
+	constructor() {
+		super();
+		EventEmitter.call(this);
+	}
+
+	emitAssert(assert) {
+		this.emit('assert', assert);
+	}
+
+	write() { }
+	end() { }
+}
 
 describe('TestRunnerProcess', () => {
 	let runner = {};
@@ -19,14 +34,8 @@ describe('TestRunnerProcess', () => {
 	}
 
 	beforeEach(() => {
+		parser = new FakeParser();
 		executor = new TerminalCommandExecutorDouble();
-
-		parser = {
-			on() {},
-			write() {},
-			end() {}
-		};
-
 		runner = new TestRunnerProcess(executor);
 		spyOn(runner, '_getParser').andReturn(parser);
 	});
@@ -68,5 +77,22 @@ describe('TestRunnerProcess', () => {
 		expect(runner.canRun()).toBe(false);
 		executor.emulateDataFinished(0);
 		expect(runner.canRun()).toBe(true);
+	});
+
+	it('emits assertion with the correct format', () => {
+		const receivedAssertResults = [];
+		const okAssertResult = {ok: true};
+		const notOkAssertResult = {ok: false};
+
+		runner.run('/somefolder/filename');
+		runner.on('assert', result => receivedAssertResults.push(result));
+
+		parser.emitAssert(okAssertResult);
+		parser.emitAssert(notOkAssertResult);
+
+		expect(receivedAssertResults[0].assert).toBe(okAssertResult);
+		expect(receivedAssertResults[0].currentExecution.passed).toBe(1);
+		expect(receivedAssertResults[1].assert).toBe(notOkAssertResult);
+		expect(receivedAssertResults[1].currentExecution.passed).toBe(1);
 	});
 });

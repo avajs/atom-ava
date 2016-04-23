@@ -1,11 +1,70 @@
 @import 'ui-variables';
 
+@horizontal-dividers-color: #DDD;
+
 .ava {
+	width: 350px;
 	padding: 30px;
 	font-size: 15px;
 
+	.file-header {
+		border-top: 1px solid @horizontal-dividers-color;
+    border-bottom: 1px solid @horizontal-dividers-color;
+    padding: 5px;
+	}
+
+	.ava-logo-container {
+		text-align: center;
+		.ava-logo-image {
+			width: 110px;
+		}
+	}
+
+	.test-statistics {
+		display: table;
+    margin: 0 auto;
+		text-align: center;
+		padding-bottom: 25px;
+
+		.number {
+			font-family: "Helvetica Neue", Helvetica;
+			font-weight: lighter;
+			font-size: 42px;
+			text-align: center;
+		}
+		.text {
+			font-size: 13px;
+    	letter-spacing: -0.5px;
+    	text-align: center;
+			margin-top: -10px;
+		}
+
+		.test-statistics-passed-container {
+			float:left;
+			padding-right: 20px;
+		}
+		.test-statistics-failed-container {
+			float:left;
+		}
+	}
+
+	.test-container {
+		border-top: 1px solid @horizontal-dividers-color;
+		padding-top: 25px;
+
+		.test {
+			white-space: nowrap;
+  		overflow: hidden;
+  		text-overflow: ellipsis;
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.ok { color: #6D9669; }
+		.ko { color: #B03952; }
+	}
+
 	.message { padding-bottom: 10px; }
 	.summary { font-size: 12px; padding-top: 10px; }
-	.test { font-size: 11px; font-weight: bold; }
 	.executing { font-size: 12px; font-weight: bold; padding-bottom: 10px;}
 }
