@@ -3,6 +3,7 @@
 import EventEmitter from 'events';
 import TestRunnerProcess from '../lib/test-runner-process';
 import TerminalCommandExecutor from '../lib/terminal-command-executor';
+import ParserFactory from '../lib/parser-factory';
 
 class FakeParser extends EventEmitter {
 	constructor() {
@@ -22,6 +23,7 @@ describe('TestRunnerProcess', () => {
 	let runner = {};
 	let executor = {};
 	let parser = {};
+	let parserFactory = {};
 
 	class TerminalCommandExecutorDouble extends TerminalCommandExecutor {
 		emulateDataWrittenStdOut(data) {
@@ -36,8 +38,10 @@ describe('TestRunnerProcess', () => {
 	beforeEach(() => {
 		parser = new FakeParser();
 		executor = new TerminalCommandExecutorDouble();
-		runner = new TestRunnerProcess(executor);
-		spyOn(runner, '_getParser').andReturn(parser);
+		parserFactory = new ParserFactory();
+		spyOn(parserFactory, 'getParser').andReturn(parser);
+
+		runner = new TestRunnerProcess(executor, parserFactory);
 	});
 
 	it('can be created', () => expect(runner).not.toBeNull());
