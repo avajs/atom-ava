@@ -30,7 +30,10 @@
     "test": "xo"
   },
   "activationCommands": {
-    "atom-workspace": "ava:toggle"
+    "atom-workspace": [
+      "ava:toggle",
+      "ava:run"
+    ]
   },
   "keywords": [
     "snippets",
