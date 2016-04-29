@@ -1,6 +1,6 @@
 {
   "name": "ava",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Snippets for AVA",
   "license": "MIT",
   "repository": "sindresorhus/atom-ava",
