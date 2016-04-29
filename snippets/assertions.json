@@ -1,5 +1,5 @@
 {
-	".source.js, .source.jsx, .source.ts": {
+	".source.js, .source.js.jsx, .source.jsx, .source.ts": {
 		"t.pass()": {
 			"prefix": "t.pass",
 			"body": "t.pass(${1:'${2:message}'});"

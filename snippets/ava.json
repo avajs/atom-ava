@@ -1,5 +1,5 @@
 {
-	".source.js, .source.jsx, .source.ts": {
+	".source.js, .source.js.jsx, .source.jsx, .source.ts": {
 		"AVA": {
 			"prefix": "ava",
 			"body": "import test from 'ava';\nimport $1 from '$2';\n\ntest('${3:title}', t => {\n\tt.is($1(), '$4');\n});"
