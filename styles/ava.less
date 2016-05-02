@@ -1,4 +1,5 @@
 @import 'ui-variables';
+@import "loading-indicator.less";
 
 @horizontal-dividers-color: #DDD;
 
@@ -16,9 +17,11 @@
 	#file-header {
 		background-color: #EEE;
     color: #888;
-    padding: 10px;
+    padding: 7px;
 		font-size: 12px;
 		font-weight: bold;
+		border-top: 1px solid #E9E9E9;
+		border-bottom: 1px solid #E9E9E9;
 	}
 
 	.ava-logo-container {
@@ -32,7 +35,7 @@
 		display: table;
     margin: 0 auto;
 		text-align: center;
-		padding-bottom: 25px;
+		padding-bottom: 5px;
 
 		.number {
 			font-family: "Helvetica Neue", Helvetica;
@@ -80,10 +83,5 @@
 		font-size: 12px;
 	}
 
-	#executing {
-		font-size: 12px;
-		font-weight: bold;
-		padding-bottom: 10px;
-		text-align:center;
-	}
+	#executing { height: 35px; }
 }
