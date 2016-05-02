@@ -4,21 +4,19 @@
 
 .ava {
 	width: 350px;
-	padding: 30px;
 	font-size: 15px;
 
 	.close-icon {
 		text-align: right;
-    margin-bottom: 10px;
-		margin-top: -15px;
-    font-size: 18px;
+		margin-right: 10px;
+    font-size: 16px;
     cursor: pointer;
 	}
 
 	#file-header {
-		border-top: 1px solid @horizontal-dividers-color;
-    border-bottom: 1px solid @horizontal-dividers-color;
-    padding: 5px;
+		background-color: #EEE;
+    color: #888;
+    padding: 10px;
 		font-size: 12px;
 		font-weight: bold;
 	}
@@ -59,8 +57,7 @@
 	}
 
 	.tests-container {
-		border-top: 1px solid @horizontal-dividers-color;
-		padding-top: 25px;
+		padding: 10px 30px;
 
 		.test {
 			white-space: nowrap;
@@ -83,5 +80,10 @@
 		font-size: 12px;
 	}
 
-	#executing { font-size: 12px; font-weight: bold; padding-bottom: 10px;}
+	#executing {
+		font-size: 12px;
+		font-weight: bold;
+		padding-bottom: 10px;
+		text-align:center;
+	}
 }
