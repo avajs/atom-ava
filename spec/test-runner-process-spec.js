@@ -49,35 +49,35 @@ describe('TestRunnerProcess', () => {
 	it('runs the executor with the appropriate parameters', () => {
 		spyOn(atom.project, 'getPaths').andReturn(['path']);
 		spyOn(executor, 'run');
-		runner.run('/somefolder/filename');
+		runner.run('/somefolder/', 'filename');
 		expect(executor.run).toHaveBeenCalledWith('ava filename --tap', '/somefolder/');
 	});
 
 	it('redirects the output for the parser when is received', () => {
 		spyOn(parser, 'write');
-		runner.run('/somefolder/filename');
+		runner.run('/somefolder/', 'filename');
 		executor.emulateDataWrittenStdOut('newdata');
 		expect(parser.write).toHaveBeenCalledWith('newdata');
 	});
 
 	it('closes the parser stream when the output is over', () => {
 		spyOn(parser, 'end');
-		runner.run('/somefolder/filename');
+		runner.run('/somefolder/', 'filename');
 		executor.emulateDataFinished(0);
 		expect(parser.end).toHaveBeenCalled();
 	});
 
 	it('prevents multiple executions', () => {
 		spyOn(executor, 'run');
-		runner.run('/somefolder/filename');
-		runner.run('/somefolder/filename');
+		runner.run('/somefolder/', 'filename');
+		runner.run('/somefolder/', 'filename');
 		expect(executor.run.callCount).toBe(1);
 	});
 
 	it('informs about the state of the execution', () => {
 		spyOn(executor, 'run');
 		expect(runner.canRun()).toBe(true);
-		runner.run('/somefolder/filename');
+		runner.run('/somefolder/', 'filename');
 		expect(runner.canRun()).toBe(false);
 		executor.emulateDataFinished(0);
 		expect(runner.canRun()).toBe(true);
@@ -88,7 +88,7 @@ describe('TestRunnerProcess', () => {
 		const okAssertResult = {ok: true};
 		const notOkAssertResult = {ok: false};
 
-		runner.run('/somefolder/filename');
+		runner.run('/somefolder/', 'filename');
 		runner.on('assert', result => receivedAssertResults.push(result));
 
 		parser.emitAssert(okAssertResult);
