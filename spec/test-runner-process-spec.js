@@ -99,4 +99,30 @@ describe('TestRunnerProcess', () => {
 		expect(receivedAssertResults[1].assert).toBe(notOkAssertResult);
 		expect(receivedAssertResults[1].currentExecution.passed).toBe(1);
 	});
+
+	it('does not count skipped tests as success', () => {
+		const receivedAssertResults = [];
+		const assertResult = {ok: true, skip: true};
+		runner.run('/somefolder/', 'filename');
+		runner.on('assert', result => receivedAssertResults.push(result));
+
+		parser.emitAssert(assertResult);
+
+		expect(receivedAssertResults[0].assert).toBe(assertResult);
+		expect(receivedAssertResults[0].currentExecution.passed).toBe(0);
+		expect(receivedAssertResults[0].currentExecution.failed).toBe(0);
+	});
+
+	it('does not count todo tests as failed', () => {
+		const receivedAssertResults = [];
+		const assertResult = {ok: false, todo: true};
+		runner.run('/somefolder/', 'filename');
+		runner.on('assert', result => receivedAssertResults.push(result));
+
+		parser.emitAssert(assertResult);
+
+		expect(receivedAssertResults[0].assert).toBe(assertResult);
+		expect(receivedAssertResults[0].currentExecution.passed).toBe(0);
+		expect(receivedAssertResults[0].currentExecution.failed).toBe(0);
+	});
 });
