@@ -17,13 +17,15 @@
 	}
 
 	#file-header {
-		background-color: #EEE;
+		background-color: @tab-bar-background-color;
     color: #888;
     padding: 7px;
 		font-size: 12px;
 		font-weight: bold;
-		border-top: 1px solid #E9E9E9;
-		border-bottom: 1px solid #E9E9E9;
+		border-top: 1px solid @tab-bar-border-color;
+		border-bottom: 1px solid @tab-bar-border-color;
+		color: @text-color;
+		opacity: 0.5;
 	}
 
 	.ava-logo-container {
@@ -73,8 +75,8 @@
 
 		.ok { color: #6D9669; }
 		.ko { color: #B03952; }
-		.skipped { color: #CCC; }
-		.todo { color: #CCC; }
+		.skipped { color: @text-color-subtle; }
+		.todo { color: @text-color-subtle; }
 	}
 
 	.message { padding-bottom: 10px; }
