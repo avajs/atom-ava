@@ -2,6 +2,7 @@
   "name": "ava",
   "version": "0.3.2",
   "description": "Snippets for AVA",
+  "main": "./lib/main",
   "license": "MIT",
   "repository": "sindresorhus/atom-ava",
   "private": true,
@@ -28,6 +29,12 @@
   "scripts": {
     "test": "xo"
   },
+  "activationCommands": {
+    "atom-workspace": [
+      "ava:toggle",
+      "ava:run"
+    ]
+  },
   "keywords": [
     "snippets",
     "test",
@@ -35,10 +42,20 @@
     "ava",
     "mocha"
   ],
+  "dependencies": {
+    "tap-parser": "^1.2.2",
+    "ava": "^0.13.0"
+  },
   "devDependencies": {
     "xo": "*"
   },
   "xo": {
+    "envs": [
+      "browser",
+      "node",
+      "jasmine",
+      "atomtest"
+    ],
     "esnext": true,
     "globals": [
       "atom"
