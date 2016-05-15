@@ -2,7 +2,6 @@
   "name": "ava",
   "version": "0.3.2",
   "description": "Snippets for AVA",
-  "main": "./lib/main",
   "license": "MIT",
   "repository": "sindresorhus/atom-ava",
   "private": true,
@@ -23,6 +22,7 @@
       "url": "github.com/jamestalmage"
     }
   ],
+  "main": "lib/index.js",
   "engines": {
     "atom": ">=1.4.0"
   },
