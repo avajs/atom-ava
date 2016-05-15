@@ -22,7 +22,7 @@ class FakeSpawn {
 		};
 	}
 
-	kill() { }
+	kill() {}
 
 	on(event, callback) {
 		this.mainCallBack = callback;

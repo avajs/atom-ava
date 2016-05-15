@@ -1,5 +1,4 @@
 /** @babel */
-
 import ChildProcess from 'child_process';
 import TerminalCommandExecutor from '../lib/terminal-command-executor';
 import FakeSpawn from './fake-spawn';

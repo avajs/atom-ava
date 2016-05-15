@@ -1,5 +1,4 @@
 /** @babel */
-
 import EventEmitter from 'events';
 import TestRunnerProcess from '../lib/test-runner-process';
 import TerminalCommandExecutor from '../lib/terminal-command-executor';

@@ -11,7 +11,13 @@ describe('TestingForAva', () => {
 		workspaceElement = atom.views.getView(atom.workspace);
 		activationPromise = atom.packages.activatePackage(packageName);
 
-		const editor = {buffer: {file: {path: '/this/is/a/path/file.js'}}};
+		const editor = {
+			buffer: {
+				file: {
+					path: '/this/is/a/path/file.js'
+				}
+			}
+		};
 
 		spyOn(atom.workspace, 'getActiveTextEditor').andReturn(editor);
 	});
