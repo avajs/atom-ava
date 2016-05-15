@@ -1,4 +1,4 @@
-# AVA
+# AVA [![Build Status](https://travis-ci.org/sindresorhus/atom-ava.svg?branch=master)](https://travis-ci.org/sindresorhus/atom-ava)
 
 > Snippets for [AVA](https://ava.li)
 
