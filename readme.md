@@ -1,8 +1,8 @@
-# AVA [![Build Status](https://travis-ci.org/sindresorhus/atom-ava.svg?branch=master)](https://travis-ci.org/sindresorhus/atom-ava)
+# AVA [![Build Status](https://travis-ci.org/avajs/atom-ava.svg?branch=master)](https://travis-ci.org/avajs/atom-ava)
 
 > Snippets for [AVA](https://ava.li)
 
-<img src="https://github.com/sindresorhus/atom-ava/raw/master/screenshot.gif" width=598">
+<img src="https://github.com/avajs/atom-ava/raw/master/screenshot.gif" width=598">
 
 
 ## Install
@@ -25,11 +25,11 @@ Snippets are fuzzy matched, so you can for example just write `tde` to get the `
 
 ## Related
 
-- [Sublime plugin](https://github.com/sindresorhus/sublime-ava)
+- [Sublime plugin](https://github.com/avajs/sublime-ava)
 - [VS Code plugin](https://github.com/samverschueren/vscode-ava)
 - [Standard style version of this plugin](https://github.com/capaj/atom-ava-standard)
 
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
