@@ -1,7 +1,7 @@
 {
   "name": "ava",
   "version": "0.3.2",
-  "description": "Snippets for AVA",
+  "description": "Snippets for AVA and run tests directly in the editor",
   "license": "MIT",
   "repository": "avajs/atom-ava",
   "private": true,
