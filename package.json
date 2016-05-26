@@ -44,7 +44,7 @@
   ],
   "dependencies": {
     "tap-parser": "^1.2.2",
-    "ava": "^0.14.0"
+    "ava": "^0.15.1"
   },
   "devDependencies": {
     "xo": "*"
