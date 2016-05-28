@@ -41,15 +41,20 @@ describe('TestRunnerProcess', () => {
 		spyOn(parserFactory, 'getParser').andReturn(parser);
 
 		runner = new TestRunnerProcess(executor, parserFactory);
+
+		spyOn(executor, 'run');
 	});
 
 	it('can be created', () => expect(runner).not.toBeNull());
 
-	it('runs the executor with the appropriate parameters', () => {
-		spyOn(atom.project, 'getPaths').andReturn(['path']);
-		spyOn(executor, 'run');
+	it('runs the executor with the appropriate parameters for one file', () => {
 		runner.run('/somefolder/', 'filename');
-		expect(executor.run).toHaveBeenCalledWith('ava filename --tap', '/somefolder/');
+		expect(executor.run).toHaveBeenCalledWith('ava', ['filename', '--tap'], '/somefolder/');
+	});
+
+	it('runs the executor with the appropriate parameters for projects', () => {
+		runner.runAll('/somefolder/');
+		expect(executor.run).toHaveBeenCalledWith('ava', ['--tap'], '/somefolder/');
 	});
 
 	it('redirects the output for the parser when is received', () => {
@@ -67,14 +72,12 @@ describe('TestRunnerProcess', () => {
 	});
 
 	it('prevents multiple executions', () => {
-		spyOn(executor, 'run');
 		runner.run('/somefolder/', 'filename');
 		runner.run('/somefolder/', 'filename');
 		expect(executor.run.callCount).toBe(1);
 	});
 
 	it('informs about the state of the execution', () => {
-		spyOn(executor, 'run');
 		expect(runner.canRun()).toBe(true);
 		runner.run('/somefolder/', 'filename');
 		expect(runner.canRun()).toBe(false);
