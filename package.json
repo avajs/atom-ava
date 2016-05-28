@@ -32,6 +32,7 @@
   "activationCommands": {
     "atom-workspace": [
       "ava:toggle",
+      "ava:run-all",
       "ava:run"
     ]
   },
