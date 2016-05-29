@@ -1,6 +1,7 @@
 /** @babel */
 
 import AssertResultFactory from '../lib/assert-result-factory';
+import ExecutionContext from '../lib/execution-context';
 
 describe('TestRunnerProcess', () => {
 	let factory = {};
@@ -13,7 +14,8 @@ describe('TestRunnerProcess', () => {
 
 	it('returns assert result when a single file is executed', () => {
 		const assert = {};
-		const context = {isSingleFile: true, fileName: 'somefile.js'};
+		const context = new ExecutionContext();
+		context.setSingleFile('somefile.js');
 
 		const result = factory.getAssertResult(assert, context);
 
@@ -24,7 +26,7 @@ describe('TestRunnerProcess', () => {
 
 	it('returns assert result when multiple files are executed with group char', () => {
 		const assert = {name: 'nameofthegroup › nameofthetest'};
-		const context = {isSingleFile: false};
+		const context = new ExecutionContext();
 
 		const result = factory.getAssertResult(assert, context);
 
