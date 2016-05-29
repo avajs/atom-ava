@@ -32,6 +32,7 @@ describe('TestRunnerProcess', () => {
 
 		expect(result.assert).toBe(assert);
 		expect(result.group).toBe('nameofthegroup');
+		expect(result.assert.name).toBe('nameofthetest');
 		expect(result.currentExecution).toBe(context);
 	});
 });
