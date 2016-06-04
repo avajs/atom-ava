@@ -36,6 +36,10 @@
 			"prefix": "test-todo",
 			"body": "test.todo('${1:title}');"
 		},
+		"Test - Failing": {
+			"prefix": "test-failing",
+			"body": "test.failing('${1:title}');"
+		},
 		"Before hook": {
 			"prefix": "before-hook",
 			"body": "test.before(t => {\n\t$1\n});"
