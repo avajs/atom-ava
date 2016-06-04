@@ -52,6 +52,10 @@
 			"prefix": "t.regex",
 			"body": "t.regex(${1:contents}, ${2:regex}${3:, '${4:message}'});"
 		},
+		"t.notRegex()": {
+			"prefix": "t.notRegex",
+			"body": "t.notRegex(${1:contents}, ${2:regex}${3:, '${4:message}'});"
+		},
 		"t.ifError()": {
 			"prefix": "t.ifError",
 			"body": "t.ifError(${1:error}${2:, '${3:message}'});"
