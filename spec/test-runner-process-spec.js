@@ -1,8 +1,11 @@
 /** @babel */
+
+import fs from 'fs';
 import EventEmitter from 'events';
-import TestRunnerProcess from '../lib/test-runner-process';
-import TerminalCommandExecutor from '../lib/terminal-command-executor';
+
 import ParserFactory from '../lib/parser-factory';
+import TerminalCommandExecutor from '../lib/terminal-command-executor';
+import TestRunnerProcess from '../lib/test-runner-process';
 
 class FakeParser extends EventEmitter {
 	constructor() {
@@ -45,7 +48,16 @@ describe('TestRunnerProcess', () => {
 
 	it('can be created', () => expect(runner).not.toBeNull());
 
+	it('runs the executor with a local ava instance if possible', () => {
+		spyOn(fs, 'existsSync').andReturn(true);
+		spyOn(atom.project, 'getPaths').andReturn(['path']);
+		spyOn(executor, 'run');
+		runner.run('/somefolder/', 'filename');
+		expect(executor.run).toHaveBeenCalledWith('node_modules/.bin/ava filename --tap', '/somefolder/');
+	});
+
 	it('runs the executor with the appropriate parameters', () => {
+		spyOn(fs, 'existsSync').andReturn(false);
 		spyOn(atom.project, 'getPaths').andReturn(['path']);
 		spyOn(executor, 'run');
 		runner.run('/somefolder/', 'filename');
