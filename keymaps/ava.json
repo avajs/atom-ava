@@ -1,7 +1,7 @@
 {
 	"atom-workspace": {
-		"ctrl-alt-shift-a": "ava:run",
-		"ctrl-alt-a": "ava:run-all",
+		"ctrl-alt-shift-a": "ava:run-file",
+		"ctrl-alt-a": "ava:run",
 		"ctrl-alt-t": "ava:toggle"
 	}
 }
