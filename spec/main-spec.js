@@ -3,7 +3,7 @@
 describe('TestingForAva', () => {
 	const packageName = 'ava';
 	const mainSelector = '.ava';
-	const toggleCommand = 'ava:toggle';
+	const runCommand = 'ava:run';
 	let workspaceElement = [];
 	let activationPromise = [];
 
@@ -12,10 +12,9 @@ describe('TestingForAva', () => {
 		activationPromise = atom.packages.activatePackage(packageName);
 
 		const editor = {
-			buffer: {
-				file: {
-					path: '/this/is/a/path/file.js'
-				}
+			getPath: () => '/this/is/a/path/file.js',
+			project: {
+				getPaths: () => ['/path/1/', '/path/2/']
 			}
 		};
 
@@ -28,14 +27,14 @@ describe('TestingForAva', () => {
 
 			expect(workspaceElement.querySelector(mainSelector)).not.toExist();
 
-			atom.commands.dispatch(workspaceElement, toggleCommand);
+			atom.commands.dispatch(workspaceElement, runCommand);
 
 			waitsForPromise(() => activationPromise);
 
 			runs(() => {
 				const mainElement = workspaceElement.querySelector(mainSelector);
 				expect(mainElement).toBeVisible();
-				atom.commands.dispatch(workspaceElement, toggleCommand);
+				atom.commands.dispatch(workspaceElement, 'core:cancel');
 				expect(mainElement).not.toBeVisible();
 			});
 		});
