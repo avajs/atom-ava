@@ -101,7 +101,10 @@ describe('TestRunnerProcess', () => {
 
 	it('does not count skipped tests as success', () => {
 		const receivedAssertResults = [];
-		const assertResult = {ok: true, skip: true};
+		const assertResult = {
+			ok: true,
+			skip: true
+		};
 		runner.run('/somefolder/', 'filename');
 		runner.on('assert', result => receivedAssertResults.push(result));
 
@@ -114,7 +117,10 @@ describe('TestRunnerProcess', () => {
 
 	it('does not count todo tests as failed', () => {
 		const receivedAssertResults = [];
-		const assertResult = {ok: false, todo: true};
+		const assertResult = {
+			ok: false,
+			todo: true
+		};
 		runner.run('/somefolder/', 'filename');
 		runner.on('assert', result => receivedAssertResults.push(result));
 

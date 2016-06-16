@@ -62,6 +62,9 @@
     ],
     "ignores": [
       "atom/**"
-    ]
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": 0
+    }
   }
 }
