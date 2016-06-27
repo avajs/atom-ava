@@ -1,15 +1,9 @@
 /** @babel */
 
-import AssertResultFactory from '../lib/assert-result-factory';
+import factory from '../lib/assert-result-factory';
 import ExecutionContext from '../lib/execution-context';
 
 describe('TestRunnerProcess', () => {
-	let factory = {};
-
-	beforeEach(() => {
-		factory = new AssertResultFactory();
-	});
-
 	it('can be created', () => expect(factory).not.toBeNull());
 
 	it('returns assert result when a single file is executed', () => {
