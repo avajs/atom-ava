@@ -1,6 +1,6 @@
 {
   "name": "ava",
-  "version": "0.4.0",
+  "version": "0.5.2",
   "description": "Snippets for AVA and run tests directly in the editor",
   "license": "MIT",
   "repository": "avajs/atom-ava",
@@ -44,7 +44,7 @@
   ],
   "dependencies": {
     "tap-parser": "^1.2.2",
-    "ava": "^0.14.0"
+    "ava": "^0.15.1"
   },
   "devDependencies": {
     "xo": "*"
@@ -62,6 +62,9 @@
     ],
     "ignores": [
       "atom/**"
-    ]
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": 0
+    }
   }
 }
