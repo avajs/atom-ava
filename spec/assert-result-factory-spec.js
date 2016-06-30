@@ -1,17 +1,17 @@
 /** @babel */
 
-import factory from '../lib/assert-result-factory';
+import getAssertResult from '../lib/get-assert-result';
 import ExecutionContext from '../lib/execution-context';
 
 describe('TestRunnerProcess', () => {
-	it('can be created', () => expect(factory).not.toBeNull());
+	it('can be created', () => expect(getAssertResult).not.toBeNull());
 
 	it('returns assert result when a single file is executed', () => {
 		const assert = {};
 		const context = new ExecutionContext();
 		context.setSingleFile('somefile.js');
 
-		const result = factory.getAssertResult(assert, context);
+		const result = getAssertResult(assert, context);
 
 		expect(result.group).toBe('somefile.js');
 		expect(result.assert).toBe(assert);
@@ -22,7 +22,7 @@ describe('TestRunnerProcess', () => {
 		const assert = {name: 'nameofthegroup › nameofthetest'};
 		const context = new ExecutionContext();
 
-		const result = factory.getAssertResult(assert, context);
+		const result = getAssertResult(assert, context);
 
 		expect(result.assert).toBe(assert);
 		expect(result.group).toBe('nameofthegroup');
