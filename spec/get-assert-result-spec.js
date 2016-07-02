@@ -29,4 +29,16 @@ describe('TestRunnerProcess', () => {
 		expect(result.assert.name).toBe('nameofthetest');
 		expect(result.currentExecution).toBe(context);
 	});
+
+	it('returns default group name when files are executed without group char', () => {
+		const assert = {name: 'nameofthetest'};
+		const context = new ExecutionContext();
+
+		const result = getAssertResult(assert, context);
+
+		expect(result.assert).toBe(assert);
+		expect(result.group).toBe('results');
+		expect(result.assert.name).toBe('nameofthetest');
+		expect(result.currentExecution).toBe(context);
+	});
 });
