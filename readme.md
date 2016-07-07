@@ -23,13 +23,11 @@ Start writing a snippet's `prefix` and then press <kbd>Tab ↹</kbd> to expand t
 Snippets are fuzzy matched, so you can for example just write `tde` to get the `t.deepEqual()` snippet.
 
 
-## Run tests directly in the editor *(Work in progress)*
+## Run tests directly in the editor
 
 <img src="https://github.com/avajs/atom-ava/raw/master/media/test-panel.gif" width="500">
 
-Open a test file, then choose the `Ava: Run` command in the Command Palette or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>R</kbd>, to run the tests.
-
-*We're working on the [ability to run all tests in a project](https://github.com/avajs/atom-ava/issues/13) and more.*
+In a project, choose the `Ava: Run` command in the Command Palette or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>R</kbd> to run the tests. Choose `Ava: Run File` or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>R</kbd> to only run the current test file. Press <kbd>Esc</kbd> to close the AVA panel.
 
 
 ## Related
