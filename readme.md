@@ -27,7 +27,7 @@ Snippets are fuzzy matched, so you can for example just write `tde` to get the `
 
 <img src="https://github.com/avajs/atom-ava/raw/master/media/test-panel.gif" width="500">
 
-In a project, choose the `Ava: Run` command in the Command Palette or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>R</kbd> to run the tests. Choose `Ava: Run File` or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>R</kbd> to only run the current test file. Press <kbd>Esc</kbd> to close the AVA panel.
+In a project, choose the `Ava: Run` command in the Command Palette or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>A</kbd> to run the tests. Choose `Ava: Run File` or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>A</kbd> to only run the current test file. Press <kbd>Esc</kbd> to close the AVA panel.
 
 
 ## Related
