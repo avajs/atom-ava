@@ -4,7 +4,6 @@
   "description": "Snippets for AVA and run tests directly in the editor",
   "license": "MIT",
   "repository": "avajs/atom-ava",
-  "private": true,
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
@@ -22,18 +21,13 @@
       "url": "github.com/jamestalmage"
     }
   ],
+  "private": true,
   "main": "lib/index.js",
   "engines": {
     "atom": ">=1.4.0"
   },
   "scripts": {
     "test": "xo && apm test"
-  },
-  "activationCommands": {
-    "atom-workspace": [
-      "ava:run-file",
-      "ava:run"
-    ]
   },
   "keywords": [
     "snippets",
@@ -43,11 +37,17 @@
     "mocha"
   ],
   "dependencies": {
-    "tap-parser": "^1.2.2",
-    "ava": "^0.16.0"
+    "tap-parser": "^3.0.3",
+    "ava": "^0.17.0"
   },
   "devDependencies": {
     "xo": "*"
+  },
+  "activationCommands": {
+    "atom-workspace": [
+      "ava:run-file",
+      "ava:run"
+    ]
   },
   "xo": {
     "envs": [
@@ -62,9 +62,6 @@
     ],
     "ignores": [
       "atom/**"
-    ],
-    "rules": {
-      "import/no-extraneous-dependencies": 0
-    }
+    ]
   }
 }

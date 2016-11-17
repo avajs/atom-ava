@@ -1,6 +1,6 @@
 /** @babel */
 
-class FakeSpawn {
+export default class FakeSpawn {
 	constructor() {
 		this.commandsReceived = [];
 		const self = this;
@@ -32,5 +32,3 @@ class FakeSpawn {
 		this.mainCallBack(1);
 	}
 }
-
-module.exports = FakeSpawn;
