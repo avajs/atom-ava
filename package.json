@@ -37,8 +37,8 @@
     "mocha"
   ],
   "dependencies": {
-    "tap-parser": "^3.0.3",
-    "ava": "^0.17.0"
+    "ava": "^0.18.0",
+    "tap-parser": "^5.3.2"
   },
   "devDependencies": {
     "xo": "*"
