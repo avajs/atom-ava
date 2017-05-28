@@ -1,4 +1,23 @@
 /** @babel */
+import AvaPanel from '../lib/ava-panel';
+
+const getDockGivenDefault = () => {
+	const panel = new AvaPanel();
+	const defaultLocation = panel.getDefaultLocation();
+
+	const workspace = atom.workspace;
+
+	switch (defaultLocation) {
+		case 'center':
+			return workspace.getCenter();
+		case 'left':
+			return workspace.getLeftDock();
+		case 'right':
+			return workspace.getRightDock();
+		default:
+			return workspace.getBottomDock();
+	}
+};
 
 describe('TestingForAva', () => {
 	const packageName = 'ava';
@@ -32,10 +51,11 @@ describe('TestingForAva', () => {
 			waitsForPromise(() => activationPromise);
 
 			runs(() => {
-				const mainElement = workspaceElement.querySelector(mainSelector);
-				expect(mainElement).toBeVisible();
+				const dock = getDockGivenDefault();
+				expect(dock.isVisible()).toBeTruthy();
+
 				atom.commands.dispatch(workspaceElement, 'core:cancel');
-				expect(mainElement).not.toBeVisible();
+				expect(dock.isVisible()).toBeFalsy();
 			});
 		});
 	});
