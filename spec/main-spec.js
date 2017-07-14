@@ -53,9 +53,6 @@ describe('TestingForAva', () => {
 			runs(() => {
 				const dock = getDockGivenDefault();
 				expect(dock.isVisible()).toBeTruthy();
-
-				atom.commands.dispatch(workspaceElement, 'core:cancel');
-				expect(dock.isVisible()).toBeFalsy();
 			});
 		});
 	});
