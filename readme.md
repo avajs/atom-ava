@@ -2,7 +2,7 @@
 
 > Snippets for [AVA](https://ava.li) and run tests directly in the editor
 
-<img src="https://github.com/avajs/atom-ava/raw/master/media/screenshot.gif" width="598">
+<img src="media/screenshot.gif" width="598">
 
 
 ## Install
@@ -25,7 +25,7 @@ Snippets are fuzzy matched, so you can for example just write `tde` to get the `
 
 ## Run tests directly in the editor
 
-<img src="https://github.com/avajs/atom-ava/raw/master/media/test-panel.gif" width="500">
+<img src="media/test-panel.gif" width="500">
 
 In a project, choose the `Ava: Run` command in the Command Palette or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>A</kbd> to run the tests. Choose `Ava: Run File` or press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>A</kbd> to only run the current test file. Press <kbd>Esc</kbd> to close the AVA panel.
 
