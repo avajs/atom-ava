@@ -42,11 +42,19 @@
 		},
 		"t.throws()": {
 			"prefix": "t.throws",
-			"body": "t.throws(${1:function|promise}${2:, ${3:expected}${4:, '${5:message}'}});"
+			"body": "t.throws(${1:function}${2:, ${3:expected}${4:, '${5:message}'}});"
 		},
 		"t.notThrows()": {
 			"prefix": "t.notThrows",
-			"body": "t.notThrows(${1:function|promise}${2:, '${3:message}'});"
+			"body": "t.notThrows(${1:function}${2:, '${3:message}'});"
+		},
+		"t.throwsAsync()": {
+			"prefix": "t.throwsAsync",
+			"body": "t.throwsAsync(${1:promise|function}${2:, ${3:expected}${4:, '${5:message}'}});"
+		},
+		"t.notThrowsAsync()": {
+			"prefix": "t.notThrowsAsync",
+			"body": "t.notThrowsAsync(${1:promise|function}${2:, '${3:message}'});"
 		},
 		"t.regex()": {
 			"prefix": "t.regex",
@@ -56,9 +64,9 @@
 			"prefix": "t.notRegex",
 			"body": "t.notRegex(${1:contents}, ${2:regex}${3:, '${4:message}'});"
 		},
-		"t.ifError()": {
-			"prefix": "t.ifError",
-			"body": "t.ifError(${1:error}${2:, '${3:message}'});"
+		"t.snapshot()": {
+			"prefix": "t.snapshot",
+			"body": "t.snapshot(${1:expected}${2:, '${3:message}'});"
 		}
 	}
 }

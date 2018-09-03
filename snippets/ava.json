@@ -20,7 +20,7 @@
 			"prefix": "test-serial",
 			"body": "test.serial('${1:title}', t => {\n\t$2\n});"
 		},
-		"Test - Cb": {
+		"Test - Callback": {
 			"prefix": "test-cb",
 			"body": "test.cb('${1:title}', t => {\n\t$2\n\tt.end()\n});"
 		},
