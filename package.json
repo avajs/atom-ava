@@ -7,7 +7,7 @@
 	"private": true,
 	"main": "lib/index.js",
 	"engines": {
-		"atom": ">=1.4.0"
+		"atom": ">=1.30.0"
 	},
 	"scripts": {
 		"test": "xo && apm test"
