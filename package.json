@@ -1,49 +1,49 @@
 {
-	"name": "ava",
-	"version": "0.11.0",
-	"description": "Snippets for AVA and run tests directly in the editor",
-	"license": "MIT",
-	"repository": "avajs/atom-ava",
-	"private": true,
-	"main": "lib/index.js",
-	"engines": {
-		"atom": ">=1.30.0"
-	},
-	"scripts": {
-		"test": "xo && apm test"
-	},
-	"keywords": [
-		"snippets",
-		"test",
-		"runner",
-		"ava",
-		"mocha"
-	],
-	"dependencies": {
-		"ava": "^0.25.0",
-		"tap-parser": "^7.0.0"
-	},
-	"devDependencies": {
-		"xo": "^0.22.0"
-	},
-	"activationCommands": {
-		"atom-workspace": [
-			"ava:run-file",
-			"ava:run"
-		]
-	},
-	"xo": {
-		"envs": [
-			"browser",
-			"node",
-			"jasmine",
-			"atomtest"
-		],
-		"globals": [
-			"atom"
-		],
-		"ignores": [
-			"atom/**"
-		]
-	}
+  "name": "ava",
+  "version": "0.12.0",
+  "description": "Snippets for AVA and run tests directly in the editor",
+  "license": "MIT",
+  "repository": "avajs/atom-ava",
+  "private": true,
+  "main": "lib/index.js",
+  "engines": {
+    "atom": ">=1.30.0"
+  },
+  "scripts": {
+    "test": "xo && apm test"
+  },
+  "keywords": [
+    "snippets",
+    "test",
+    "runner",
+    "ava",
+    "mocha"
+  ],
+  "dependencies": {
+    "ava": "^0.25.0",
+    "tap-parser": "^7.0.0"
+  },
+  "devDependencies": {
+    "xo": "^0.22.0"
+  },
+  "activationCommands": {
+    "atom-workspace": [
+      "ava:run-file",
+      "ava:run"
+    ]
+  },
+  "xo": {
+    "envs": [
+      "browser",
+      "node",
+      "jasmine",
+      "atomtest"
+    ],
+    "globals": [
+      "atom"
+    ],
+    "ignores": [
+      "atom/**"
+    ]
+  }
 }
