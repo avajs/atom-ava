@@ -15,6 +15,7 @@ class FakeParser extends EventEmitter {
 	}
 
 	write() { }
+
 	end() { }
 }
 

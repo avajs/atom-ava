@@ -5,7 +5,7 @@ const getDockGivenDefault = () => {
 	const panel = new AvaPanel();
 	const defaultLocation = panel.getDefaultLocation();
 
-	const workspace = atom.workspace;
+	const {workspace} = atom;
 
 	switch (defaultLocation) {
 		case 'center':
