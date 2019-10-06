@@ -1,4 +1,6 @@
 /** @babel */
+import fs from 'fs';
+
 import EventEmitter from 'events';
 import TestRunnerProcess from '../lib/test-runner-process';
 import TerminalCommandExecutor from '../lib/terminal-command-executor';
@@ -133,5 +135,33 @@ describe('TestRunnerProcess', () => {
 		expect(receivedAssertResults[0].assert).toBe(assertResult);
 		expect(receivedAssertResults[0].currentExecution.passed).toBe(0);
 		expect(receivedAssertResults[0].currentExecution.failed).toBe(0);
+	});
+
+	// For the project ava tests we need to mock two things. First we need to
+	// mock an Atom project. The code, when given a file or folder, uses Atom's
+	// API to figure out if it's part of any project, and the project path.
+	// Given the project path, it checks whether ava is available by doing
+	// $project-path/node_modules/.bin/ava
+	// If any of these two checks fail, it will use the system ava instead.
+	it('uses project ava when available for one file', () => {
+		spyOn(atom.project, 'relativizePath')
+			.andReturn(['/test-project', 'filename']);
+		spyOn(fs, 'existsSync').andReturn(true);
+
+		const expectedAva = '/test-project/node_modules/.bin/ava';
+		runner.run('/somefolder/', 'filename');
+		expect(executor.run)
+			.toHaveBeenCalledWith(expectedAva, ['filename', '--tap'], '/somefolder/');
+	});
+
+	it('uses project ava when available for running the whole project', () => {
+		spyOn(atom.project, 'relativizePath')
+			.andReturn(['/test-project', '/somefolder/']);
+		spyOn(fs, 'existsSync').andReturn(true);
+
+		const expectedAva = '/test-project/node_modules/.bin/ava';
+		runner.runAll('/somefolder/');
+		expect(executor.run)
+			.toHaveBeenCalledWith(expectedAva, ['--tap'], '/somefolder/');
 	});
 });
